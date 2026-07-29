@@ -28,24 +28,33 @@ if (!result.ok){
     return result.json();
 }
 
+
+async function getSite(): Promise <site>{
+    const res = await fetch ("http://magnificnext.local/wp-json/magnific/v1/site",
+        {
+            cache : "no-cache",
+        }
+    );
+
+    if(!res.ok){
+        throw new Error("Failed to fetch");
+    }
+ return res.json();
+}
+
+
 export default async function Footer() {
 
     const footerItem = await  getFooter();
+    const site = await getSite();
 
-    return <FooterClient footer = {footerItem}/>
+    return (
+        <FooterClient
+        footer = {footerItem}
+        logo = {site.logo}
+        />
+    );
 
 }
 
-// async function getSite(): Promise <site>{
-//     const res = await fetch ("http://magnificnext.local/wp-json/magnific/v1/site",
-//         {
-//             cache : "no-cache",
-//         }
-//     );
-
-//     if(!res.ok){
-//         throw new Error("Failed to fetch");
-//     }
-//  return res.json();
-// }
 

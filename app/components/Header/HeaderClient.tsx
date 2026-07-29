@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-
+import Image from "next/image";
 
 type Menu = {
     id:number;
@@ -11,9 +11,10 @@ type Menu = {
 
 type HeaderClientProps = {
     menu:Menu[];
+    logo :string;
 }
 
-export default function HeaderClient({menu,}: HeaderClientProps){
+export default function HeaderClient({menu,logo}: HeaderClientProps){
     const [isOpen, setIsOpen]= useState(false);
 
     return (
@@ -21,7 +22,14 @@ export default function HeaderClient({menu,}: HeaderClientProps){
          flex justify-between items-center max-w-4xl mx-auto rounded-full fixed top-6 z-50 right-0 left-0">
             
             <div className= "text-2xl font-bold">
-                Magnific
+               <Image
+               src = {logo}
+               alt="Site Logo"
+               width={120}
+               height={100}
+               unoptimized
+               className="object-contain"
+               />
             </div>
             <nav className = "hidden md:block"> 
                 <ul className= "flex gap-5.5 text-1xl">
