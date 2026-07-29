@@ -24,9 +24,9 @@ export default function FooterClient({ footer, }: FooterClientProps) {
 
             {/* To Enter Email Design */}
 
-            <div className="flex justify-center items-center px-5  bg-[#617e7b] ">
-                <div className="  p-4  ">
-                    <h1 className="text-4xl font-bold">Lets Find Product Together</h1>
+            <div className="flex justify-center items-center p-10  bg-[#617e7b] ">
+                <div className="">
+                    <h1 className="text-6xl font-bold">Lets Find Product Together</h1>
                 </div>
                 <div className="p-4 ">
                     <input type="email" className="border text-white px-4 py-2 border-gray-400" placeholder="Enter Your Email" />
