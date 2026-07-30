@@ -87,7 +87,9 @@ export default async function AboutPage() {
           {/* Right Column: Frame Card with Contrast Border */}
           <div className="lg:col-span-5 relative">
             <div className="relative overflow-hidden rounded-2xl bg-[#c8c8c8]  border border-[#111111]/10 shadow-2xl">
+
               {about?.hero_image?.url && (
+                
                 <div className="relative h-[480px] w-full overflow-hidden rounded-xl">
                   <Image
                     src={about.hero_image.url}
