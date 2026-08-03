@@ -8,7 +8,16 @@ type card = {
     price: number | string;
     image: string;
 }
-
+type home ={
+  
+  card_title:string;
+  card_content:string;
+  button:{
+    text:string;
+    url:string;
+  } 
+    
+}
 
 async function getProductsCard(): Promise<card[]> {
 
@@ -26,26 +35,50 @@ async function getProductsCard(): Promise<card[]> {
 
 }
 
+
+async function getHomeContent(): Promise<home>{
+  const res = await fetch ("http://magnificnext.local/wp-json/magnific/v1/home", {
+    cache: "no-store",
+  });
+  if (!res.ok) {
+    throw new Error("Failed to fetch home content");
+  }
+  return res.json();
+}
+
 export default async function ProductsCard() {
 
     const cards = await getProductsCard();
+    const home = await getHomeContent();
 
     return (
         <section className="bg-white py-12 px-6 md:px-12  mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 items-start max-w-7xl  mx-auto">
         
         {/* Left Intro Text Column */}
+
         <div className="lg:col-span-1 space-y-4 pt-2">
-          <h2 className="text-3xl font-serif text-stone-700 font-normal tracking-wide">
-            Heading Text
-          </h2>
-          <p className="text-stone-400 text-sm leading-relaxed font-light">
-            Elements like this introductory text can often be hidden in the block settings. Click on this text to start editing and enter your own text with some basic formatting.
-          </p>
+         
+              <div className="space-y-2">
+                <h1 className="text-2xl font-bold text-black">
+                  {home.card_title}
+                </h1>
+                <p className="text-stone-400 text-sm leading-relaxed font-light">
+                  {home.card_content}
+                </p>
+               
+                <Link href={home.button.url} className="inline-block bg-black text-white py-2 px-4 rounded-sm hover:bg-gray-800 transition-colors duration-300">
+                  {home.button.text}
+                </Link>
+              </div>
+            
+         
         </div>
 
+
+
         {/* Right Cards Layout */}
-        <div className="lg:col-span-3 grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <div className="lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 gap-6">
           {cards.map((Productcard) => (
             <div 
               key={Productcard.id} 
