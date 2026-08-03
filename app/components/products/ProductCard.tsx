@@ -100,9 +100,7 @@ export default async function ProductsCard() {
               <div className="text-center space-y-1.5 px-3">
                 <h3 className="text-black text-xs font-light tracking-wide uppercase">
                   {Productcard.name}
-                </h3>
-               
-                
+                </h3>    
               </div>
             </div>
           ))}
