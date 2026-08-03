@@ -13,7 +13,7 @@ type home ={
   card_title:string;
   card_content:string;
   button:{
-    text:string;
+    title:string;
     url:string;
   } 
     
@@ -68,7 +68,7 @@ export default async function ProductsCard() {
                 </p>
                
                 <Link href={home.button.url} className="inline-block bg-black text-white py-2 px-4 rounded-sm hover:bg-gray-800 transition-colors duration-300">
-                  {home.button.text}
+                  {home.button.title}
                 </Link>
               </div>
             
