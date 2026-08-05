@@ -1,13 +1,22 @@
 import Link from "next/link";
 import Image from "next/image";
-
+import SliderClient from "./sliderClient";
 
 type slider = {
-    id: number;
+  
     title: string;
    description: string;
+   products:product[];
 
-}
+};
+
+type product = {
+    id:number;
+    name:string;
+    slug:string;
+    price:string;
+    image:string;
+};
 
 
 async function getSlider(): Promise<slider> {
@@ -26,21 +35,9 @@ async function getSlider(): Promise<slider> {
 }
 
 export default async function HomeSlider() {
-    const homeSlider = await getSlider();
+    const data = await getSlider();
 
-    return (
-        <>
-
-            <div className="p-6 ">
-                <h1 className="text-2xl font-bold text-black">{homeSlider.title}</h1>
-                <p className="text-gray-600">{homeSlider.description}</p>
-            </div>
-
-
-
-
-
-
-        </>
-    )
+    return <SliderClient data={data}/>;
+        
+   
 }
