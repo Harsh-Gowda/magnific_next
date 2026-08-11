@@ -2,9 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-
 import { useState } from "react";
-
 
 type product = {
     id: number;
@@ -15,12 +13,10 @@ type product = {
 }
 
 type slider = {
-
     title: string;
     description: string;
     products: product[];
 }
-
 
 type props = {
     data: slider;
@@ -58,9 +54,6 @@ export default function sliderClient({ data }: props) {
                     ←
                 </button>
 
-
-
-
                 <div className="overflow-hidden">
                     <div className="flex transition-transform duration-500"
                         style={{ transform: `translateX(-${current * 100}%)` }}>
@@ -69,7 +62,6 @@ export default function sliderClient({ data }: props) {
 
                             <div key={product.id} className="flex-shrink-0 w-full sm:w-1/2 lg:w-1/4 p-4">
                                 <Link href={`products/${product.slug}`} className="block rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
-
 
                                     {/* //Image component for product image */}
 
