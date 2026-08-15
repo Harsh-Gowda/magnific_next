@@ -32,18 +32,18 @@ export default async function AboutPage() {
 
     return (
         <>
- <main className="w-full bg-[#dadada] text-[#111111] py-28 px-6 lg:px-16 ">
+ <main className="w-full bg-[#86a1a2] text-[#ffffff] py-28 px-6 lg:px-16 ">
       <div className="max-w-7xl mx-auto">
         
         {/* Top Header Row with Metadata */}
-        <div className="flex flex-wrap items-center justify-between gap-4 pb-8 border-b border-[#111111]/15 mb-16">
+        <div className="flex flex-wrap items-center justify-between gap-4 pb-8 border-b border-[#ffffff]/15 mb-16">
           <div className="flex items-center gap-3">
-            <span className="h-2.5 w-2.5 rounded-full bg-[#111111]" />
-            <span className="text-xs font-mono uppercase tracking-widest text-[#111111]/70">
+            <span className="h-2.5 w-2.5 rounded-full bg-[#ffffff]" />
+            <span className="text-xs font-mono uppercase tracking-widest text-[#ffffff]/70">
               01 // Studio Overview
             </span>
           </div>
-          <span className="text-xs font-mono text-[#111111]/60 tracking-wider">
+          <span className="text-xs font-mono text-[#ffffff]/60 tracking-wider">
             EST. 2026 — BANGALORE
           </span>
         </div>
@@ -54,13 +54,13 @@ export default async function AboutPage() {
           {/* Left Column: Massive Editorial Title & CTA */}
           <div className="lg:col-span-7 flex flex-col justify-between min-h-full">
             <div>
-              <h1 className="text-4xl sm:text-6xl   leading-[1.08] text-[#111111]">
+              <h1 className="text-4xl sm:text-6xl   leading-[1.08] text-[#ffffff]">
                 {about.hero_title}
               </h1>
 
               {/* Rich Text Body */}
               <div 
-                className="mt-10 text-lg sm:text-xl  text-[#111111]/80 max-w-2xl [&>p]:mb-6"
+                className="mt-10 text-lg sm:text-xl  text-[#ffffff]/80 max-w-2xl [&>p]:mb-6"
                 dangerouslySetInnerHTML={{ __html: about.description }}
               />
             </div>
@@ -77,7 +77,7 @@ export default async function AboutPage() {
 
               <a 
                 href="#catalogue"
-                className="px-8 py-4 rounded-full border border-[#111111]/30 text-[#111111] text-sm font-medium tracking-wide hover:bg-[#111111]/5 transition-colors"
+                className="px-8 py-4 rounded-full border border-[#ffffff]/30 text-[#111111] text-sm font-medium tracking-wide hover:bg-[#111111]/5 transition-colors"
               >
                 Explore Catalogue
               </a>
