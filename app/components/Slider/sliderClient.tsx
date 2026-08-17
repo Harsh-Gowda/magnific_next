@@ -61,7 +61,7 @@ export default function sliderClient({ data }: props) {
                         {data.products.map((product) => (
 
                             <div key={product.id} className="flex-shrink-0 w-full sm:w-1/2 lg:w-1/4 p-4">
-                                <Link href={`products/${product.slug}`} className="block rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                                <Link href={`/products/${product.slug}`} className="block rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
 
                                     {/* //Image component for product image */}
 
