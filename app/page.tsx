@@ -12,6 +12,7 @@ export default function Home() {
       <ProductsCard />
       <HomeSlider />
       <About />
+      
     </div>
    </main>
   );
