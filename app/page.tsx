@@ -3,6 +3,7 @@ import Hero from "./components/Hero";
 import About from "./about/page";
 import ProductsCard from "./components/products/ProductCard";
 import HomeSlider from "./components/Slider/slider";
+import Newsletter from "./components/Newsletter/Newsletter";
 
 export default function Home() {
   return (
@@ -12,7 +13,7 @@ export default function Home() {
       <ProductsCard />
       <HomeSlider />
       <About />
-      
+      <Newsletter />
     </div>
    </main>
   );
