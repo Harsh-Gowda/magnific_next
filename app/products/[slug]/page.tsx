@@ -35,22 +35,30 @@ export default async function singleProduct({
   return (
     <main>
 
-      <div>
-        <Image
+      <div className='flex flex-row w-full '>
 
-          src={product.image}
-          alt={product.name}
-          width={800}
-          height={800}
-          unoptimized
-          className='w-full h-auto'
-        />
-        <h1>
-          {product.name}
-        </h1>
-        <p>
-          {product.price}
-        </p>
+        <div className='w-[50%]'>
+          <Image
+
+            src={product.image}
+            alt={product.name}
+            width={800}
+            height={800}
+            unoptimized
+            className='w-full h-auto'
+          />
+        </div>
+
+        <div className='w-[50%]'>
+
+          <h1>
+            {product.name}
+          </h1>
+          <p>
+            {product.price}
+          </p>
+        </div>
+
       </div>
     </main>
   );

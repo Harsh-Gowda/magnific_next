@@ -3,7 +3,7 @@ import Image from "next/image";
 
 
 type news = {
-    id:number;
+   
     title:string;
     description:string;
     image:{
