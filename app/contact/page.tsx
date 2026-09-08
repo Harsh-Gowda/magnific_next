@@ -30,66 +30,92 @@ export default async function ContactPage() {
     const data = await getContact();
 
     return (
-        <main className='container grid gap-12 pb-20' >
+        <main className='w-full'>
 
-            <section className='relative h-screen w-full overflow-hidden'>
+
+            {/* Hero Section */}
+
+            <section className='relative w-full'>
 
                 <Image
                     src="/images/Contact.jpg"
                     alt="Contact"
                     fill
-                    className='object-cover w-full h-full'
+                    className=' absolute inset-0 -z-20 object-cover'
                     unoptimized
                 />
+                <div className='absolute inset-0 -z-10 bg-black/60 '></div>
 
 
-                <div className='absolute inset-0  bg-black/50 align-center justify-center flex flex-col gap-4 text-center'>
-                    <h1 className='text-3xl font-bold text-white'> {data.title} </h1>
-                    <p className='text-white'>{data.description}</p>
-                </div>
+                    <div className=' relative z-10 pb-20'>
+                        <div className='flex justify-center items-center min-h-[400px]'>
+
+                                 <h1 className='text-3xl font-bold text-white'>{data.title}</h1>
+                        </div>
+                        <div className=' bg-white min-h-[350px] opacity-50  justify-center flex text-center items-center '>
+                            <p className='text-black'>{data.description}</p>
+                        </div>
+                        <div className='grid grid-cols-2 md:grid-cols-4  text-center '>
+                            <div className='bg-[#edeae3] p-10 '>
+                                <h1 className='text-2xl font-bold text-black'>Email</h1>
+                                <p className='text-black'>{data.email}</p>
+                            </div>
+                            <div className='bg-[#625947] p-10'>
+                                <h1 className='text-2xl font-bold text-black'>Phone</h1>
+                                <p className='text-black'>{data.phone}</p>
+                            </div>
+                            <div className='bg-[#edeae3] p-10'>
+                                <h1 className='text-2xl font-bold text-black'>Email</h1>
+                                <p className='text-black'>{data.email}</p>
+                            </div>
+                            <div className='bg-[#625947] p-10'>
+                                <h1 className='text-2xl font-bold text-black'>Address</h1>
+                                <p className='text-black'>{data.address}</p>
+                            </div>
+
+
+
+                        </div>
+
+                        <div className='flex flex-row w-[100%]  justify-center text-center'>
+                            <div className='bg-[#969291] w-[50%] p-10'>
+                                <h1 className='text-2xl font-bold text-white'>Magnific Design fans</h1>
+                            </div>
+                            <div className='bg-[#636260] w-[50%] p-10'>
+                                <h1 className='text-2xl font-bold text-white'>Magnific Design fans</h1>
+
+                            </div>
+                        </div>
+
+
+                         {/* Contact Us Design */}
+
+                         <div className='flex flex-col w-[100%]  justify-center text-center h-[500px]'>
+                            <div className=""> 
+                              < h1 className='text-2xl font-bold text-white'>Magnific Design fans</h1>
+                            </div>
+                            <div className="flex flex-row w-[100%] justify-center text-center">
+                                <div className=" w-[50%] p-20"> 
+                                    <h1 className='text-2xl font-bold text-white'>Magnific Design fans</h1>
+                                    </div>
+                                <div className=" w-[50%] p-20">
+                                     <h1 className='text-2xl font-bold text-white'>Magnific Design fans</h1>
+                                     </div>
+                            </div>
+                         </div>
+
+                    </div>
+
+                
             </section>
 
-
-
-            <div className='w-full text-center py-40 ' style={{ backgroundImage: `url(${data.image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}  >
-
-            </div>
-
-            <div className='grid grid-rows-1 md:grid-rows-2 gap-10 '>
-                <div className="bg-amber-100 p-10 gap-5 text-center">
-                    <h1>Reach Us Directly</h1>
-                </div>
-                <div className='flex flex-row gap-12 align-center justify-center'>
-                    <div className="bg-amber-500 p-10">
-                        <h1> Icon box 1 </h1>
-                    </div>
-                    <div className="bg-amber-800 p-10">
-                        <h1> Icon box 2 </h1>
-                    </div>
-                    <div className="bg-amber-50 p-10">
-                        <h1> Icon box 3 </h1>
-                    </div>
-                    <div className="bg-amber-700 p-10">
-                        <h1> Icon box 4 </h1>
-                    </div>
-
-                </div>
-            </div>
-
-
-            <div className='grid grid-cols-1 md:grid-cols-2 gap-12'>
-                <div className="bg-amber-100 p-50">
-                    <h1>Magnific Designer fans</h1>
-                </div>
-                <div className="bg-amber-500 p-50">
-                    <h1>Magnific Designer fans</h1>
-                </div>
-            </div>
-
+           
 
 
 
         </main>
+
+
     );
 
 }
