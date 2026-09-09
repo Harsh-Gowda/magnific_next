@@ -107,7 +107,7 @@ export default async function ContactPage() {
 
                     {/* Contact Us Design */}
 
-                    <div className='flex flex-col w-[100%]  justify-center text-center h-[500px]'>
+                    <div className='flex flex-col w-[100%]  justify-center text-center h-[1000px]'>
                         <div className="">
                             < h1 className='text-2xl font-bold text-white'>Magnific Design fans</h1>
                         </div>
