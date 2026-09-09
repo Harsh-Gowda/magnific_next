@@ -1,5 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
+import Location from '@/app/components/Location/Location';
+
 
 type Contact = {
     id: number;
@@ -10,6 +12,8 @@ type Contact = {
     address: string;
     image: string;
 };
+
+
 
 
 async function getContact(): Promise<Contact> {
@@ -24,10 +28,23 @@ async function getContact(): Promise<Contact> {
     }
     return res.json();
 }
+async function getLocation(){
+    const res = await fetch("http://magnificnext.local/wp-json/magnific/v1/locations",
+        {
+            cache: "no-store",
+        }
+    );
 
+    if(!res.ok){
+        throw new Error("Failed to fetch");
+    }
+    return res.json();
+
+}
 
 export default async function ContactPage() {
     const data = await getContact();
+    const locations = await getLocation();
 
     return (
         <main className='w-full'>
@@ -95,8 +112,8 @@ export default async function ContactPage() {
                             < h1 className='text-2xl font-bold text-white'>Magnific Design fans</h1>
                         </div>
                         <div className="flex flex-row w-[100%] justify-center text-center">
-                            <div className=" w-[50%] p-20">
-                                <h1 className='text-2xl font-bold text-white'>Magnific Design fans</h1>
+                            <div className=" w-[50%] p-20 text-white">
+                                <Location locations={locations} />
                             </div>
                             <div className=" w-[50%] p-20">
                                 <h1 className='text-2xl font-bold text-white'>Magnific Design fans</h1>
